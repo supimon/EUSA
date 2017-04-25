@@ -42,6 +42,22 @@ section{
 /* - - - - - - - - - - - - - - - - - - - - header section - - - - */
 .header-section{
     padding: 18px 0px;
+    position: fixed;
+    top: 0px;
+    width: 100%;
+}
+.header-section .container{
+    position: relative;
+    z-index: 2;
+}
+.header-bg-color{
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 73px;
+    background-color: white;
+    z-index: 1;
 }
 .site-logo{
     text-align: center;
@@ -50,10 +66,12 @@ section{
 .nav a{
     text-transform: uppercase;
 }
+.navbar{
+    margin-bottom: 0px;
+}
 .navbar-nav>li>a{
     font-weight: 600;
 }
-
 .navbar-default {
     background-color: transparent;
     border-color: transparent;
@@ -78,11 +96,19 @@ section{
     border-right: 6px solid transparent;
     border-left: 6px solid transparent;
     transform: rotate(-90deg);
+    -webkit-transform: rotate(-90deg);
     color: #a91e2e;
 }
+.nav .open .caret{
+    transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
+}
 @media(max-width: 767px){
+    .header-section {
+        padding-bottom: 0px;
+    }
     .container-fluid>.navbar-header {
-        margin-bottom: 30px;
+        margin-bottom: 17px;
     }
     .nav>li>a{
         background-color: #383838;
@@ -91,11 +117,12 @@ section{
         display: inline-block !important;
         width: 20px;
         position: absolute;
-        top: 0px;
+        top: 9px;
         right: 30px;
     }
     .plus-vert{
         transform: rotate(90deg);
+        -webkit-transform: rotate(90deg);
     }
     .open .plus-vert{
         display: none !important;
@@ -123,15 +150,28 @@ section{
     }
     .navbar-nav {
         margin-top: 0px;
+        margin-bottom: 0px;
     }
     .navbar-default .navbar-collapse {
         margin-left: -31px;
         margin-right: -31px;
+        max-height: calc(100vh - 73px);
+    }
+    .navbar-nav>li>a, .navbar-nav .open .dropdown-menu>li>a {
+        border-bottom: 1px solid #b5b5b5;
+        padding-top: 20px;
+        padding-bottom: 20px;
     }
 }
 @media(min-width: 768px){
+    .header-section{
+        background-color: #f9f9f9;
+        box-shadow: 0px 2px 15px #bbb;
+        -webkit-box-shadow: 0px 2px 15px #bbb;
+    }
     .navbar-default {
         display: inline-block;
+        float: right;
     }
     .dropdown-menu>li>a {
         text-align: left;
@@ -147,17 +187,13 @@ section{
 }
 @media(min-width: 1200px){
     .navbar-nav>li {
-        font-size: 15px;
-    }
-    .navbar-default {
-        float: right;
+        font-size: 18px;
     }
 }
 /* Navigation - Hamburger animation
  * credits: Jesse Couch
  * link: https://codepen.io/designcouch/pen/Atyop
  */
-
 #nav-icon1{
     width: 52px;
     height: 35px;
@@ -178,7 +214,7 @@ section{
     position: absolute;
     height: 7px;
     width: 100%;
-    background: #d3531a;
+    background: #a91e2e;;
     border-radius: 9px;
     opacity: 1;
     left: 0;
@@ -240,4 +276,30 @@ section{
         transition: all 0.2s linear;
         -webkit-transition: all 0.2s linear;
     }
+}
+
+/* - - - - - - - - - - - - - - - - - - - - banner section - - - - */
+
+.banner-section{
+    height: 400px;
+    background-color: pink;
+    margin-top: 73px;
+}
+@media(min-width: 768px){
+    .banner-section{
+        margin-top: 83px;
+    }
+}
+@media(min-width: 768px) and (max-width: 991px){
+    .navbar {
+        min-height: inherit;
+    }
+}
+@media(min-width: 992px){
+    .banner-section{
+        margin-top: 91px;
+    }
+}
+@media(min-width: 1200px){
+
 }
