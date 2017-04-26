@@ -31,9 +31,6 @@
 body{
     font-family: 'Montserrat', sans-serif;
 }
-section{
-    max-width: 1920px;
-}
 @media(min-width: 1400px){
     .container{
         width: 1284px;
@@ -284,6 +281,10 @@ section{
     height: 400px;
     background-color: pink;
     margin-top: 73px;
+}
+.banner-section .container{
+    max-width: 1920px;
+    height: 770px;
 }
 @media(min-width: 768px){
     .banner-section{
